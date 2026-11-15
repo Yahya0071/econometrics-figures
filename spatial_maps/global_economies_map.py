@@ -7,8 +7,8 @@ Classifies world economies according to the International Monetary Fund (IMF) Wo
 Utilizes the Robinson projection (+proj=robin) to avoid Mercator landmass distortion.
 
 Citations:
-- International Monetary Fund (2024). World Economic Outlook: Steady but Slow: Resilience amid Divergence.
-  Washington, DC: International Monetary Fund.
+- International Monetary Fund (2024). World Economic Outlook: Policy Pivot, Rising Threats.
+  Washington, DC: International Monetary Fund. DOI: 10.5089/9798400255892.081
 - Robinson, A. H. (1974). A New Map Projection: Its Development and Characteristics.
   International Yearbook of Cartography, 14, 145-155.
 """

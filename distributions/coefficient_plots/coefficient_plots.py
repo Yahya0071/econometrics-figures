@@ -78,10 +78,14 @@ def plot_coefficient_forest(df, out_png=None, out_pdf=None, style_path=None):
     ax.set_yticks(y_positions)
     ax.set_yticklabels(df["spec"], fontsize=8.5)
     
-    # Group header bracket annotations on the left
-    ax.text(-0.55, 5.5, "Full Sample Specs", color="#0072B2", fontsize=8.0, fontweight="bold", ha="right")
-    ax.text(-0.55, 2.5, "Sector Subsamples", color="#D55E00", fontsize=8.0, fontweight="bold", ha="right")
-    ax.text(-0.55, 0.5, "Capital Subsamples", color="#009E73", fontsize=8.0, fontweight="bold", ha="right")
+    # Subgroup dividers separating specification groups
+    ax.axhline(3.5, color="#CCCCCC", linestyle=":", linewidth=0.8, zorder=1)
+    ax.axhline(1.5, color="#CCCCCC", linestyle=":", linewidth=0.8, zorder=1)
+    
+    # Subgroup headers inside the right margin
+    ax.text(0.95, 7.35, "Full Sample Specifications", color="#0072B2", fontsize=8.0, fontweight="bold", ha="right", va="center")
+    ax.text(0.95, 3.25, "Sector Subsamples", color="#D55E00", fontsize=8.0, fontweight="bold", ha="right", va="center")
+    ax.text(0.95, 1.25, "Capital Subsamples", color="#009E73", fontsize=8.0, fontweight="bold", ha="right", va="center")
     
     ax.set_xlabel("Estimated Coefficient ($\\beta$) with 90% and 95% Confidence Intervals", fontsize=9.0, labelpad=8)
     

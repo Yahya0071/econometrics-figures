@@ -121,7 +121,7 @@ def draw_rotated_diamond_legend(ax, x_label="Higher Income", y_label="Higher Col
     )
     ax.text(
         r_apex / 2.0 + 0.35, r_apex / 2.0 - 0.35,
-        f"{x_label} $\\rightarrow$",
+        x_label,
         rotation=45, ha="center", va="top",
         fontsize=7.8, fontweight="bold", color="#222222",
         zorder=12
@@ -135,7 +135,7 @@ def draw_rotated_diamond_legend(ax, x_label="Higher Income", y_label="Higher Col
     )
     ax.text(
         -r_apex / 2.0 - 0.35, r_apex / 2.0 - 0.35,
-        f"{y_label} $\\rightarrow$",
+        y_label,
         rotation=-45, ha="center", va="top",
         fontsize=7.8, fontweight="bold", color="#222222",
         zorder=12

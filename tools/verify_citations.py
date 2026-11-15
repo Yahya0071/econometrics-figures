@@ -1,18 +1,22 @@
 import json
+import sys
 import urllib.request
 
 dois = [
     ("Cattaneo et al. 2024", "10.1257/aer.20221576"),
-    ("Abadie et al. 2010", "10.1198/jasa.2009.ap08740"),
+    ("Abadie et al. 2010", "10.1198/jasa.2009.ap08746"),
     ("Anselin 1988", "10.1007/978-94-015-7799-1"),
     ("Calonico et al. 2014", "10.3982/ECTA11757"),
     ("Calonico et al. 2015", "10.1080/01621459.2015.1017578"),
     ("Goodman-Bacon 2021", "10.1016/j.jeconom.2021.03.014"),
     ("Callaway and Sant'Anna 2021", "10.1016/j.jeconom.2020.12.001"),
     ("Sun and Abraham 2021", "10.1016/j.jeconom.2020.09.006"),
-    ("Jorda 2005", "10.1257/0002828053828518")
+    ("Jorda 2005", "10.1257/0002828053828518"),
+    ("Pisati 2004", "10.1177/1536867X0400400401"),
+    ("Jann 2014", "10.1177/1536867X1401400402")
 ]
 
+errors = []
 for label, doi in dois:
     url = f"https://api.crossref.org/works/{doi}"
     req = urllib.request.Request(url, headers={"User-Agent": "ResearchAudit/1.0 (mailto:audit@example.com)"})
@@ -37,4 +41,11 @@ for label, doi in dois:
             print(f"  Primary URL: {resource_url}")
             print()
     except Exception as e:
-        print(f"Error for {doi}: {e}")
+        print(f"Error for {doi}: {e}", file=sys.stderr)
+        errors.append((label, doi, str(e)))
+
+if errors:
+    print(f"Failed to verify {len(errors)} citations.", file=sys.stderr)
+    sys.exit(1)
+
+print(f"Successfully verified all {len(dois)} citations against Crossref.")
