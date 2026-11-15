@@ -1,0 +1,36 @@
+% Publication-Grade Academic Summary Table with Embedded Sparklines
+% Adheres to Edward Tufte's principles of Table-Graphic Integration
+% Compile with pdflatex or lualatex
+
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\begin{table}[htbp]
+\centering
+\caption{Macroeconomic Summary Statistics and Multi-Year Trajectories (2015--2026)}
+\label{tab:macro_sparklines}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Macro Series} & \textbf{Mean} & \textbf{Std. Dev.} & \textbf{Min} & \textbf{Max} & \textbf{Latest} & \textbf{Trajectory (2015--2026)} \\
+\midrule
+Consumer Inflation (\%) & 3.82 & 2.21 & 1.80 & 8.90 & 2.60 & \raisebox{-0.15\height}{\includegraphics[height=1.2em]{spark_inflation.pdf}} \\
+Unemployment Rate (\%) & 4.98 & 1.34 & 3.60 & 8.10 & 4.10 & \raisebox{-0.15\height}{\includegraphics[height=1.2em]{spark_unemployment.pdf}} \\
+Federal Funds Rate (\%) & 2.05 & 2.02 & 0.25 & 5.25 & 4.75 & \raisebox{-0.15\height}{\includegraphics[height=1.2em]{spark_federal_funds.pdf}} \\
+Crude Oil Spot (\$/bbl) & 68.9 & 16.4 & 39.0 & 95.0 & 74.0 & \raisebox{-0.15\height}{\includegraphics[height=1.2em]{spark_oil_price.pdf}} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+\begin{minipage}{0.95\textwidth}
+\footnotesize
+\textit{Notes:} Table illustrates Tufte (1983) table-graphic integration. Red/orange points identify series minimums; blue points identify series maximums; black points denote the most recent observation. Sparklines are rendered as vector graphics embedded within table cells.
+\end{minipage}
+\end{table}
+
+\end{document}

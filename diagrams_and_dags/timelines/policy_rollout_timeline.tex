@@ -1,0 +1,58 @@
+% Publication-Grade Policy Rollout Timeline Schematic
+% Adheres to Gastel & Day exhibit standards for empirical institutional settings
+% Compile with pdflatex or lualatex
+
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}[
+    x=1.3cm, y=1.0cm,
+    cohort/.style={font=\sffamily\small\bfseries},
+    time_label/.style={font=\sffamily\footnotesize},
+    desc/.style={font=\sffamily\scriptsize, align=center}
+]
+
+    % Time axis
+    \draw[->, >={Stealth[length=3mm]}, thick] (0, 0) -- (10.5, 0) node[right, time_label] {Calendar Year};
+
+    % Time tick marks
+    \foreach \x/\yr in {1/2014, 3/2016, 5/2018, 7/2020, 9/2022} {
+        \draw[thick] (\x, 0.15) -- (\x, -0.15);
+        \node[below=0.2cm, time_label] at (\x, 0) {\yr};
+    }
+
+    % Cohort 1: Early Adopters (2016)
+    \node[left, cohort] at (0, 2.5) {Cohort A};
+    \draw[thick, fill=blue!10] (1, 2.2) rectangle (3, 2.8);
+    \draw[thick, fill=blue!50] (3, 2.2) rectangle (9.5, 2.8);
+    \node at (2, 2.5) [desc] {Pre-Reform};
+    \node at (6.25, 2.5) [desc, text=white] {\textbf{Treated Post-Reform}};
+
+    % Cohort 2: Mid Adopters (2018)
+    \node[left, cohort] at (0, 1.3) {Cohort B};
+    \draw[thick, fill=blue!10] (1, 1.0) rectangle (5, 1.6);
+    \draw[thick, fill=blue!50] (5, 1.0) rectangle (9.5, 1.6);
+    \node at (3, 1.3) [desc] {Pre-Reform};
+    \node at (7.25, 1.3) [desc, text=white] {\textbf{Treated Post-Reform}};
+
+    % Cohort 3: Late Adopters (2020)
+    \node[left, cohort] at (0, 0.1) {}; % axis line
+    \node[left, cohort] at (0, -0.9) {Cohort C};
+    \draw[thick, fill=blue!10] (1, -1.2) rectangle (7, -0.6);
+    \draw[thick, fill=blue!50] (7, -1.2) rectangle (9.5, -0.6);
+    \node at (4, -0.9) [desc] {Pre-Reform};
+    \node at (8.25, -0.9) [desc, text=white] {\textbf{Treated}};
+
+    % Untreated Never-Treated Cohort
+    \node[left, cohort] at (0, -2.1) {Never-Treated};
+    \draw[thick, fill=gray!20] (1, -2.4) rectangle (9.5, -1.8);
+    \node at (5.25, -2.1) [desc, text=black!80] {Pure Comparison Pool (Untreated Across Sample Period)};
+
+    % Legend and annotations at top
+    \draw[decorate, decoration={brace, amplitude=5pt}, thick] (3, 3.1) -- (7, 3.1)
+        node[midway, above=6pt, desc, font=\sffamily\footnotesize] {Staggered Reform Adoption Window};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,27 @@
+# Python environments and bytecode
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# R runtime artifacts and history
+Rplots.pdf
+.Rhistory
+.RData
+.Rproj.user/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+
+# Local agent configuration and rules (companion guidance)
+SKILL.md
+AGENTS.md

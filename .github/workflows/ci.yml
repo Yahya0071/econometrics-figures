@@ -1,0 +1,167 @@
+name: CI Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+# NOTE ON STATA SCRIPTS:
+# Stata (.do) files cannot be executed on standard GitHub Actions runners because
+# Stata is proprietary software requiring an active commercial license.
+# Stata scripts in this repository are linted locally for strict syntax compliance,
+# explicit package requirements (e.g. ssc install lines), and directory-independent paths.
+
+jobs:
+  validate-python-figures:
+    name: Python ${{ matrix.python-version }} Generators
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: ${{ matrix.python-version == '3.14' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy pandas matplotlib scipy statsmodels geopandas shapely pyproj pyogrio
+
+      - name: Run Event Study Generator (-W error)
+        run: python -W error causal_inference/event_studies/event_study.py
+
+      - name: Run Regression Discontinuity Generator (-W error)
+        run: python -W error causal_inference/regression_discontinuity/rd_plots.py
+
+      - name: Run Synthetic Control Generator (-W error)
+        run: python -W error causal_inference/synthetic_control/synthetic_control.py
+
+      - name: Run Binscatter Generator (-W error)
+        run: python -W error distributions/binscatters/binscatter.py
+
+      - name: Run Coefficient Plot Generator (-W error)
+        run: python -W error distributions/coefficient_plots/coefficient_plots.py
+
+      - name: Run Tufte Minimalist Boxplot Generator (-W error)
+        run: python -W error distributions/tufte_minimal/tufte_boxplot.py
+
+      - name: Run Tufte Slopegraph Generator (-W error)
+        run: python -W error distributions/slopegraphs/slopegraph.py
+
+      - name: Run State Tile Grid Cartogram Generator (-W error)
+        run: python -W error spatial_maps/state_tile_grid.py
+
+      - name: Run Regional Choropleth Map Generator (-W error)
+        run: python -W error spatial_maps/regional_choropleth.py
+
+      - name: Run Bivariate Choropleth Map Generator (-W error)
+        run: python -W error spatial_maps/bivariate_choropleth.py
+
+      - name: Run Global Economies Map Generator (-W error)
+        run: python -W error spatial_maps/global_economies_map.py
+
+      - name: Run Impulse Response Generator (-W error)
+        run: python -W error time_series/impulse_responses/irf_plots.py
+
+      - name: Run Sparklines Generator (-W error)
+        run: python -W error diagrams_and_dags/sparklines/sparklines.py
+
+      - name: Verify Generated Outputs
+        run: python tools/verify_outputs.py
+
+  validate-r-figures:
+    name: R Script Execution
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install R packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::ggplot2
+            any::sf
+            any::biscale
+            any::cowplot
+            any::patchwork
+            any::fixest
+
+      - name: Run R Generators
+        run: |
+          Rscript causal_inference/event_studies/event_study.R
+          Rscript causal_inference/regression_discontinuity/rd_plots.R
+          Rscript causal_inference/synthetic_control/synthetic_control.R
+          Rscript distributions/binscatters/binscatter.R
+          Rscript distributions/coefficient_plots/coefficient_plots.R
+          Rscript distributions/tufte_minimal/tufte_boxplot.R
+          Rscript distributions/slopegraphs/slopegraph.R
+          Rscript spatial_maps/choropleth_map.R
+          Rscript spatial_maps/bivariate_choropleth.R
+          Rscript spatial_maps/global_economies_map.R
+          Rscript time_series/impulse_responses/irf_plots.R
+
+  validate-latex-figures:
+    name: LaTeX and TikZ Compilation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-pictures
+
+      - name: Compile TikZ DAGs
+        run: |
+          pdflatex -interaction=nonstopmode -output-directory=diagrams_and_dags/causal_dags diagrams_and_dags/causal_dags/dag_collider.tex
+          pdflatex -interaction=nonstopmode -output-directory=diagrams_and_dags/causal_dags diagrams_and_dags/causal_dags/dag_confounding.tex
+          pdflatex -interaction=nonstopmode -output-directory=diagrams_and_dags/causal_dags diagrams_and_dags/causal_dags/dag_instrumental_variable.tex
+
+      - name: Compile Policy Rollout Timeline
+        run: |
+          pdflatex -interaction=nonstopmode -output-directory=diagrams_and_dags/timelines diagrams_and_dags/timelines/policy_rollout_timeline.tex
+
+      - name: Compile Sparkline Table
+        run: |
+          cd diagrams_and_dags/sparklines
+          pdflatex -interaction=nonstopmode sparkline_table.tex
+
+  lint-style-and-invariants:
+    name: Lint Em Dashes and AI Blacklist
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check for em dashes and prohibited AI vocabulary
+        run: python tools/lint_style.py

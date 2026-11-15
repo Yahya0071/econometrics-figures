@@ -1,0 +1,73 @@
+# Matplotlib Academic Publication Style Sheet
+# Adheres to Gastel & Day exhibit standards for empirical research
+# Compatible with American Economic Review (AER), QJE, JFE, and Nature guidelines
+
+# Figure dimensions and resolution
+figure.figsize: 7.0, 4.5
+figure.dpi: 300
+figure.autolayout: False
+savefig.dpi: 300
+savefig.bbox: tight
+savefig.pad_inches: 0.05
+savefig.format: pdf
+
+# Font family and rendering
+# For full LaTeX rendering in native papers, set text.usetex to True when LaTeX is present
+font.family: serif
+font.serif: Times New Roman, DejaVu Serif, Computer Modern Roman, Latin Modern Roman
+font.size: 10.0
+axes.titlesize: 11.0
+axes.titleweight: bold
+axes.titlepad: 10.0
+axes.labelsize: 10.0
+axes.labelweight: normal
+axes.labelpad: 6.0
+xtick.labelsize: 9.0
+ytick.labelsize: 9.0
+legend.fontsize: 9.0
+figure.titlesize: 12.0
+
+# Axes frame, ticks, and ink economy (Gastel & Day standard)
+axes.spines.top: False
+axes.spines.right: False
+axes.spines.left: True
+axes.spines.bottom: True
+axes.linewidth: 0.8
+axes.edgecolor: 222222
+axes.facecolor: FFFFFF
+
+# Ticks
+xtick.direction: out
+ytick.direction: out
+xtick.major.size: 4.0
+xtick.major.width: 0.8
+ytick.major.size: 4.0
+ytick.major.width: 0.8
+xtick.minor.visible: False
+ytick.minor.visible: False
+xtick.color: 222222
+ytick.color: 222222
+
+# Grid: unobtrusive horizontal reference lines only
+axes.grid: True
+axes.grid.axis: y
+grid.color: E5E5E5
+grid.linestyle: --
+grid.linewidth: 0.5
+grid.alpha: 0.7
+
+# Legend: clean, unboxed, transparent
+legend.frameon: False
+legend.loc: upper left
+legend.handlelength: 1.5
+legend.handletextpad: 0.5
+legend.borderaxespad: 0.5
+
+# Color cycle: Colorblind-safe Tol / Okabe-Ito palette
+axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', '009E73', 'CC79A7', 'F0E442', '56B4E9', '999999'])
+
+# Line and marker defaults
+lines.linewidth: 1.5
+lines.markersize: 5.5
+lines.solid_capstyle: round
+errorbar.capsize: 0.0

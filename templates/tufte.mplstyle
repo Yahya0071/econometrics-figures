@@ -1,0 +1,68 @@
+# Tufte Minimalist Academic Style Sheet
+# Adheres to Edward Tufte's principles from The Visual Display of Quantitative Information (1983, 2001)
+# Maximizes the data-ink ratio; eliminates non-data visual clutter and chartjunk
+
+# Figure dimensions and resolution
+figure.figsize: 7.0, 4.5
+figure.dpi: 300
+figure.autolayout: False
+savefig.dpi: 300
+savefig.bbox: tight
+savefig.pad_inches: 0.04
+savefig.format: pdf
+
+# Typography: Classic serif matching academic text
+font.family: serif
+font.serif: Times New Roman, DejaVu Serif, Computer Modern Roman, Latin Modern Roman
+font.size: 9.5
+axes.titlesize: 10.5
+axes.titleweight: bold
+axes.titlepad: 12.0
+axes.labelsize: 9.5
+axes.labelweight: normal
+axes.labelpad: 6.0
+xtick.labelsize: 8.5
+ytick.labelsize: 8.5
+legend.fontsize: 8.5
+figure.titlesize: 11.5
+
+# Axes spines: Zero top and right spines; minimal left and bottom
+axes.spines.top: False
+axes.spines.right: False
+axes.spines.left: True
+axes.spines.bottom: True
+axes.linewidth: 0.6
+axes.edgecolor: 333333
+axes.facecolor: FFFFFF
+
+# Ticks: Outward, delicate, muted
+xtick.direction: out
+ytick.direction: out
+xtick.major.size: 3.5
+xtick.major.width: 0.6
+ytick.major.size: 3.5
+ytick.major.width: 0.6
+xtick.minor.visible: False
+ytick.minor.visible: False
+xtick.color: 333333
+ytick.color: 333333
+
+# Grid: Zero gridlines by default (Tufte rule: gridlines almost never carry information)
+axes.grid: False
+axes.grid.axis: both
+
+# Legend: Unboxed, zero boundary, transparent
+legend.frameon: False
+legend.loc: upper left
+legend.handlelength: 1.2
+legend.handletextpad: 0.4
+legend.borderaxespad: 0.4
+
+# Palette: Colorblind-safe Tol and Okabe-Ito muted palette
+axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', '009E73', 'CC79A7', '56B4E9', 'F0E442', '444444'])
+
+# Line and errorbar defaults
+lines.linewidth: 1.4
+lines.markersize: 4.5
+lines.solid_capstyle: round
+errorbar.capsize: 0.0
