@@ -33,18 +33,27 @@ Status definitions:
 | `causal_inference/event_studies/event_study.do` | Stata | Homogeneous DGP; missing `avar` dependency declaration | **STATIC-CHECK** | PDF + PNG (declared) | Statically verified. Added `ssc install avar` and `eventstudyinteract`; path-independent syntax. |
 | `causal_inference/regression_discontinuity/rd_plots.py` | Python | PNG only; in-figure title; legend box; uniform kernel | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 3.74s, 2026-11-15). |
 | `causal_inference/regression_discontinuity/rd_plots.R` | R | In-figure title; single PDF output | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.48s, 2026-11-15). |
+| `causal_inference/regression_discontinuity/rd_plots.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented sharp RD with `rdrobust` and `rdplot` (Calonico, Cattaneo, and Titiunik, 2014, 2015). |
 | `causal_inference/synthetic_control/synthetic_control.py` | Python | PNG only; in-figure titles; detached legend boxes | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 2.74s, 2026-11-15). |
 | `causal_inference/synthetic_control/synthetic_control.R` | R | In-figure titles; single PDF output | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.39s, 2026-11-15). |
+| `causal_inference/synthetic_control/synthetic_control.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented synthetic control via `synth` (Abadie, Diamond, and Hainmueller, 2010). |
 | `distributions/binscatters/binscatter.py` | Python | PNG only; in-figure title; wrong Cattaneo citation | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 3.61s, 2026-11-15). Citation corrected. |
 | `distributions/binscatters/binscatter.R` | R | In-figure title; single PDF output; wrong citation | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.25s, 2026-11-15). Citation corrected. |
+| `distributions/binscatters/binscatter.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented via `binsreg` (Cattaneo et al., 2024) and `binscatter` (Stepner, 2013). |
 | `distributions/coefficient_plots/coefficient_plots.py` | Python | PNG only; in-figure title; missing PDF | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 2.07s, 2026-11-15). |
 | `distributions/coefficient_plots/coefficient_plots.R` | R | In-figure title; deprecated `geom_errorbarh` | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.28s, 2026-11-15). Replaced with `geom_errorbar(..., orientation = "y")`. |
+| `distributions/coefficient_plots/coefficient_plots.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented multi-model forest exhibit via `coefplot` (Jann, 2014) with dual 90% and 95% CIs. |
 | `distributions/tufte_minimal/tufte_boxplot.py` | Python | PNG only; in-figure titles for both exhibits | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 2.55s, 2026-11-15). Dual PDF and PNG written for both exhibits. |
 | `distributions/tufte_minimal/tufte_boxplot.R` | R | In-figure title; single PDF output | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.21s, 2026-11-15). |
+| `distributions/tufte_minimal/tufte_boxplot.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented Tufte midgap boxplot with percentile spikes and median points. |
 | `distributions/slopegraphs/slopegraph.py` | Python | PNG only; in-figure title | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 2.02s, 2026-11-15). |
 | `distributions/slopegraphs/slopegraph.R` | R | In-figure title; single PDF output | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.19s, 2026-11-15). |
+| `distributions/slopegraphs/slopegraph.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented Tufte slopegraph via paired trajectory coordinates with direct labels. |
 | `spatial_maps/state_tile_grid.py` | Python | PNG only; in-figure title | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 2.31s, 2026-11-15). |
+| `spatial_maps/state_tile_grid.R` | R | Missing R implementation | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.25s, 2026-11-15). Equal-area tile grid via `geom_tile`. |
+| `spatial_maps/state_tile_grid.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented 51-jurisdiction equal-area tile grid cartogram via coordinate scatter tiles. |
 | `spatial_maps/regional_choropleth.py` | Python | PNG only; in-figure title | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 2.34s, 2026-11-15). |
+| `spatial_maps/regional_choropleth.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented 25-region spatial lattice choropleth with Anselin spatial autocorrelation. |
 | `spatial_maps/choropleth_map.R` | R | In-figure title; single PDF output; requires `sf` | **STATIC-CHECK** | PDF + PNG (conditional) | Inspected syntax and packages; requires `sf` (not installed in local Windows R 4.6.0; installed in CI). |
 | `spatial_maps/bivariate_choropleth.py` | Python | PNG only; in-figure title; `os.path` | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 2.99s, 2026-11-15). |
 | `spatial_maps/bivariate_choropleth.R` | R | In-figure title; requires `sf` and `biscale` | **STATIC-CHECK** | PDF + PNG (conditional) | Inspected syntax and packages; requires `sf` and `biscale` (installed in CI via setup-r-dependencies). |
@@ -55,7 +64,10 @@ Status definitions:
 | `spatial_maps/stata_bimap.do` | Stata | In-figure title in comments | **STATIC-CHECK** | PDF + PNG (declared) | Statically verified. Declared packages (`bimap`); documented dual export. |
 | `time_series/impulse_responses/irf_plots.py` | Python | PNG only; in-figure title; legend box | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 4.09s, 2026-11-15). |
 | `time_series/impulse_responses/irf_plots.R` | R | In-figure title; single PDF output; stray Rplots.pdf | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.34s, 2026-11-15). `invisible()` added to suppress Rplots.pdf. |
+| `time_series/impulse_responses/irf_plots.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented local projections IRF with Newey-West standard errors (Jorda, 2005). |
 | `diagrams_and_dags/sparklines/sparklines.py` | Python | Uses `os.path` | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `.venv/Scripts/python.exe -W error` (exit code 0, 1.53s, 2026-11-15). All 4 series exported. |
+| `diagrams_and_dags/sparklines/sparklines.R` | R | Missing R implementation | **RAN-LOCAL** | PDF + PNG (300 DPI) | Executed via `Rscript.exe` (exit code 0, 1.35s, 2026-11-15). All 4 macroeconomic sparklines exported. |
+| `diagrams_and_dags/sparklines/sparklines.do` | Stata | Missing Stata implementation | **STATIC-CHECK** | PDF + PNG (declared) | Implemented 12-period sparklines for 4 macroeconomic indicators with min/max dots. |
 | `diagrams_and_dags/sparklines/sparkline_table.tex` | LaTeX | Local pdflatex unavailable | **STATIC-CHECK** | PDF (declared) | Standalone table syntax inspected and validated. Added to CI TeX Live pipeline. |
 | `diagrams_and_dags/causal_dags/*.tex` | LaTeX | Local pdflatex unavailable | **STATIC-CHECK** | PDF (declared) | Standalone TikZ syntax inspected for DAG collider, confounding, and IV. Added to CI pipeline. |
 | `diagrams_and_dags/timelines/*.tex` | LaTeX | Local pdflatex unavailable | **STATIC-CHECK** | PDF (declared) | Standalone TikZ timeline syntax inspected and validated. Added to CI pipeline. |
@@ -144,17 +156,17 @@ Every citation in the repository was re-verified against Crossref metadata or pr
 | Exhibit Module | Python (`.py`) | R (`.R`) | Stata (`.do`) | LaTeX (`.tex`) | Parity Status |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | Event Studies (Staggered DiD) | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Regression Discontinuity | Yes | Yes | **Missing** | N/A | Python + R parity |
-| Synthetic Control | Yes | Yes | **Missing** | N/A | Python + R parity |
-| Binscatters | Yes | Yes | **Missing** | N/A | Python + R parity |
-| Coefficient Plots | Yes | Yes | **Missing** | N/A | Python + R parity |
-| Tufte Minimal Boxplot / Rug | Yes | Yes | **Missing** | N/A | Python + R parity |
-| Slopegraphs | Yes | Yes | **Missing** | N/A | Python + R parity |
-| State Tile Grid Cartogram | Yes | **Missing** | **Missing** | N/A | Python primary |
-| Regional Lattice Choropleth | Yes | Yes | **Missing** | N/A | Python + R parity |
+| Regression Discontinuity | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
+| Synthetic Control | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
+| Binscatters | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
+| Coefficient Plots | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
+| Tufte Minimal Boxplot / Rug | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
+| Slopegraphs | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
+| State Tile Grid Cartogram | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
+| Regional Lattice Choropleth | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
 | Bivariate Choropleth | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
 | Global Economies (IMF WEO) | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Impulse Response Functions | Yes | Yes | **Missing** | N/A | Python + R parity |
-| Sparklines | Yes | **Missing** | **Missing** | Yes | Python + LaTeX parity |
+| Impulse Response Functions | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
+| Sparklines | Yes | Yes | Yes | Yes | Complete Quad-Language Parity |
 | Causal DAGs | N/A | N/A | N/A | Yes | Standalone TikZ |
 | Rollout Timelines | N/A | N/A | N/A | Yes | Standalone TikZ |

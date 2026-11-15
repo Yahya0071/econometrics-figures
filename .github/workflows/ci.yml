@@ -113,10 +113,12 @@ jobs:
           Rscript distributions/coefficient_plots/coefficient_plots.R
           Rscript distributions/tufte_minimal/tufte_boxplot.R
           Rscript distributions/slopegraphs/slopegraph.R
+          Rscript spatial_maps/state_tile_grid.R
           Rscript spatial_maps/choropleth_map.R
           Rscript spatial_maps/bivariate_choropleth.R
           Rscript spatial_maps/global_economies_map.R
           Rscript time_series/impulse_responses/irf_plots.R
+          Rscript diagrams_and_dags/sparklines/sparklines.R
 
   validate-latex-figures:
     name: LaTeX and TikZ Compilation
