@@ -34,14 +34,19 @@ load_world_sf <- function(script_dir) {
   }
   
   world <- sf::st_read(geojson_path, quiet = TRUE)
-  world <- subset(world, `ISO3166-1-Alpha-3` != "ATA")
+  iso_idx <- grep("ISO.*3|Alpha.*3", names(world), ignore.case = TRUE)[1]
+  if (is.na(iso_idx)) {
+    iso_idx <- 2
+  }
+  iso_col_name <- names(world)[iso_idx]
+  world <- world[world[[iso_col_name]] != "ATA", ]
   
   if (is.na(sf::st_crs(world))) {
     sf::st_crs(world) <- 4326
   }
   world_robin <- sf::st_transform(world, crs = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs")
   
-  iso_col <- world_robin$`ISO3166-1-Alpha-3`
+  iso_col <- world_robin[[iso_col_name]]
   world_robin$group <- "Low-Income & Developing Economies"
   world_robin$group[iso_col %in% emerging_iso3] <- "Emerging Market Economies"
   world_robin$group[iso_col %in% advanced_iso3] <- "Advanced Economies"

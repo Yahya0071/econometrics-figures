@@ -31,15 +31,15 @@ create_synthetic_spatial_sf <- function(n_rows = 6, n_cols = 8, seed = 42) {
         x0 + 0.5, y0
       ), ncol = 2, byrow = TRUE)
       
-      polys[[counter]] <- st_polygon(list(coords))
+      polys[[counter]] <- sf::st_polygon(list(coords))
       counter <- counter + 1
     }
   }
   
-  sfc <- st_sfc(polys)
+  sfc <- sf::st_sfc(polys)
   values <- rnorm(length(sfc), mean = 20, sd = 5)
   
-  st_sf(
+  sf::st_sf(
     zone_id = paste0("CZ_", seq_along(sfc)),
     economic_index = values,
     geometry = sfc
