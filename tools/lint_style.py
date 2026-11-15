@@ -1,8 +1,8 @@
 """
 Lint Style and Invariants.
 Verifies that tracked files contain:
-1. Zero em dashes (\u2014, —).
-2. Zero blacklisted AI filler words (delve, pivotal, tapestry, intricate, multifaceted).
+1. Zero em dashes (unicode 2014).
+2. Zero blacklisted AI filler words.
 """
 
 import subprocess
@@ -17,6 +17,8 @@ def main():
     
     files = subprocess.check_output(["git", "ls-files"], cwd=repo_root, text=True).splitlines()
     for f in files:
+        if f == "tools/lint_style.py":
+            continue
         p = repo_root / f
         if p.is_file() and p.suffix in {".py", ".R", ".do", ".tex", ".md"}:
             text = p.read_text(encoding="utf-8", errors="ignore")
