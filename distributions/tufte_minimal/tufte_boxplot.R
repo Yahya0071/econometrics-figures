@@ -62,7 +62,7 @@ plot_tufte_boxplot_r <- function(df, out_pdf = "tufte_boxplot_r.pdf", out_png = 
   ggsave(out_pdf, plot = p, width = 7.0, height = 4.5, device = "pdf")
   ggsave(out_png, plot = p, width = 7.0, height = 4.5, dpi = 300)
   message(sprintf("Saved: %s and %s", out_pdf, out_png))
-  return(p)
+  return(invisible(p))
 }
 
 main <- function() {
@@ -78,6 +78,7 @@ main <- function() {
   out_pdf <- file.path(script_dir, "tufte_boxplot_r.pdf")
   out_png <- file.path(script_dir, "tufte_boxplot_r.png")
   plot_tufte_boxplot_r(dat, out_pdf, out_png)
+  invisible(NULL)
 }
 
 if (!interactive()) {

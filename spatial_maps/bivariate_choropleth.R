@@ -91,7 +91,7 @@ plot_bivariate_map_r <- function(gdf, out_pdf = "bivariate_choropleth_r.pdf", ou
   ggsave(out_pdf, plot = final_plot, width = 8.5, height = 6.0, device = "pdf")
   ggsave(out_png, plot = final_plot, width = 8.5, height = 6.0, dpi = 300)
   message(sprintf("Saved: %s and %s", out_pdf, out_png))
-  return(final_plot)
+  return(invisible(final_plot))
 }
 
 main <- function() {
@@ -114,6 +114,7 @@ main <- function() {
   out_pdf <- file.path(script_dir, "bivariate_choropleth_r.pdf")
   out_png <- file.path(script_dir, "bivariate_choropleth_r.png")
   plot_bivariate_map_r(spatial_data, out_pdf, out_png)
+  invisible(NULL)
 }
 
 if (!interactive()) {

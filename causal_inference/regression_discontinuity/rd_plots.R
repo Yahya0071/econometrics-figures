@@ -106,7 +106,7 @@ plot_rd_r <- function(df, bins_df, cutoff = 0, bandwidth = 1.0, out_pdf = "rd_pl
   ggsave(out_pdf, plot = p, width = 7.2, height = 4.6, device = "pdf")
   ggsave(out_png, plot = p, width = 7.2, height = 4.6, dpi = 300)
   message(sprintf("RD plots saved to %s and %s", out_pdf, out_png))
-  return(p)
+  return(invisible(p))
 }
 
 main <- function() {
@@ -123,6 +123,7 @@ main <- function() {
   out_pdf <- file.path(script_dir, "rd_plot_r.pdf")
   out_png <- file.path(script_dir, "rd_plot_r.png")
   plot_rd_r(df, binned, cutoff = 0, bandwidth = 1.0, out_pdf = out_pdf, out_png = out_png)
+  invisible(NULL)
 }
 
 if (!interactive()) {

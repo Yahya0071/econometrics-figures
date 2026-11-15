@@ -116,7 +116,7 @@ plot_sc_r <- function(sim_data, res_sc, out_pdf = "synthetic_control_r.pdf", out
   ggsave(out_pdf, plot = p, width = 9.5, height = 4.6, device = "pdf")
   ggsave(out_png, plot = p, width = 9.5, height = 4.6, dpi = 300)
   message(sprintf("Saved: %s and %s", out_pdf, out_png))
-  return(p)
+  return(invisible(p))
 }
 
 main <- function() {
@@ -133,6 +133,7 @@ main <- function() {
   out_pdf <- file.path(script_dir, "synthetic_control_r.pdf")
   out_png <- file.path(script_dir, "synthetic_control_r.png")
   plot_sc_r(dat, sol, out_pdf, out_png)
+  invisible(NULL)
 }
 
 if (!interactive()) {

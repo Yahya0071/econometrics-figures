@@ -81,7 +81,7 @@ plot_choropleth_r <- function(gdf, out_pdf = "choropleth_r.pdf", out_png = "chor
   ggsave(out_pdf, plot = p, width = 8.0, height = 5.5, device = "pdf")
   ggsave(out_png, plot = p, width = 8.0, height = 5.5, dpi = 300)
   message(sprintf("Saved: %s and %s", out_pdf, out_png))
-  return(p)
+  return(invisible(p))
 }
 
 main <- function() {
@@ -102,6 +102,7 @@ main <- function() {
   out_pdf <- file.path(script_dir, "choropleth_r.pdf")
   out_png <- file.path(script_dir, "choropleth_r.png")
   plot_choropleth_r(spatial_df, out_pdf, out_png)
+  invisible(NULL)
 }
 
 if (!interactive()) {

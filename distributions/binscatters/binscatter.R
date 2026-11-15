@@ -82,7 +82,7 @@ plot_binscatter_r <- function(raw_df, binned_df, out_pdf = "binscatter_r.pdf", o
   ggsave(out_pdf, plot = p, width = 7.2, height = 4.6, device = "pdf")
   ggsave(out_png, plot = p, width = 7.2, height = 4.6, dpi = 300)
   message(sprintf("Saved: %s and %s", out_pdf, out_png))
-  return(p)
+  return(invisible(p))
 }
 
 main <- function() {
@@ -99,6 +99,7 @@ main <- function() {
   out_pdf <- file.path(script_dir, "binscatter_r.pdf")
   out_png <- file.path(script_dir, "binscatter_r.png")
   plot_binscatter_r(raw, binned, out_pdf, out_png)
+  invisible(NULL)
 }
 
 if (!interactive()) {
