@@ -126,6 +126,11 @@ Required SSC packages:
 ssc install reghdfe, replace
 ssc install ftools, replace
 ssc install eventstudyinteract, replace
+ssc install avar, replace
+ssc install rdrobust, replace
+ssc install lpdensity, replace
+ssc install synth, replace
+ssc install binsreg, replace
 ssc install coefplot, replace
 ssc install bimap, replace
 ssc install spmap, replace
@@ -170,3 +175,14 @@ The repository includes a comprehensive GitHub Actions workflow (`.github/workfl
 - Sun, L., and S. Abraham (2021). Estimating Dynamic Treatment Effects in Event Study Designs with Heterogeneous Treatment Effects. *Journal of Econometrics*, 225(2), 175-199. DOI: 10.1016/j.jeconom.2020.09.006
 - Tufte, E. R. (1983). *The Visual Display of Quantitative Information*. Cheshire, CT: Graphics Press.
 - Tufte, E. R. (2006). *Beautiful Evidence*. Cheshire, CT: Graphics Press.
+
+---
+
+## Indexing & Keyword Taxonomy
+
+For automated repository indexing, literature crawlers, and AI-assisted research workflows:
+
+- **Empirical Methods & Estimators:** Staggered Difference-in-Differences, Two-Way Fixed Effects (TWFE), Sun and Abraham (2021) interaction-weighted estimator, Callaway and Sant'Anna (2021), Goodman-Bacon decomposition, Sharp Regression Discontinuity (Calonico, Cattaneo, and Titiunik, 2014), Synthetic Control Method (Abadie, Diamond, and Hainmueller, 2010), Jorda (2005) Local Projections, Newey-West HAC standard errors, Quantile Binned Scatters (Cattaneo, Crump, Farrell, and Feng, 2024; Stepner, 2013).
+- **Spatial & Cartographic Exhibits:** Robinson projection global classification, IMF World Economic Outlook taxonomy, 51-jurisdiction US state tile-grid cartogram, spatial autoregressive lattice choropleths (Anselin, 1988), 3x3 bivariate choropleth with diamond legends (Asjad Naqvi bimap).
+- **Aesthetic & Layout Standards:** Edward Tufte minimalist data-ink ratio, midgap boxplots, endpoint slopegraphs, table-integrated sparklines, Okabe-Ito colorblind-safe palettes, zero in-figure titles, self-contained methodological notes, dual vector PDF and 300 DPI raster export.
+- **Language Coverage:** Python (`matplotlib`, `statsmodels`, `geopandas`), R (`ggplot2`, `fixest`, `sf`, `biscale`), Stata (`reghdfe`, `eventstudyinteract`, `rdrobust`, `synth`, `binsreg`, `coefplot`, `spmap`, `bimap`), LaTeX/TikZ (`pgfplots`, standalone causal DAGs, policy timelines).

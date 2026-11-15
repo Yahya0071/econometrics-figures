@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use these figure templates or computational scripts in your research, please cite this repository as follows."
+title: "Publication-Grade Figures for Empirical Research: Python, R, Stata, and LaTeX Templates"
+abstract: "A standardized repository of publication-ready figure templates and reproducible estimation scripts for empirical economics, causal inference, spatial econometrics, and time series analysis."
+type: software
+authors:
+  - family-names: "Al-Ghamdi"
+    given-names: "Yahya"
+keywords:
+  - econometrics
+  - causal-inference
+  - data-visualization
+  - academic-figures
+  - difference-in-differences
+  - event-studies
+  - synthetic-control
+  - regression-discontinuity
+  - local-projections
+  - impulse-responses
+  - binscatter
+  - spatial-econometrics
+  - choropleth
+  - stata
+  - r-stats
+  - python
+  - latex
+  - tufte
+license: MIT
+repository-code: "https://github.com/your-username/figures"
+date-released: 2026-11-15

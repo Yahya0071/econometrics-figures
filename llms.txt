@@ -1,0 +1,38 @@
+# Publication-Grade Figures for Empirical Research
+
+> Publication-ready figure templates and computational generator scripts in Python, R, Stata, and LaTeX/TikZ for empirical economics, causal inference, and top-tier academic journal submissions (AER, QJE, JFE, REStud).
+
+## Core Capabilities
+
+- **Staggered Difference-in-Differences:** Event studies addressing dynamic treatment effect heterogeneity. Compares standard Two-Way Fixed Effects (TWFE) with robust interaction-weighted estimators (Sun and Abraham, 2021). Available in Python (`event_study.py`), R (`event_study.R`), and Stata (`event_study.do`).
+- **Regression Discontinuity Designs:** Sharp RD exhibits with optimal bandwidth selection, robust bias correction, and data-driven binned scatter plots (Calonico, Cattaneo, and Titiunik, 2014, 2015). Available in Python (`rd_plots.py`), R (`rd_plots.R`), and Stata (`rd_plots.do`).
+- **Synthetic Control:** Trajectory comparisons and treatment effect gap plots with donor weights (Abadie, Diamond, and Hainmueller, 2010). Available in Python (`synthetic_control.py`), R (`synthetic_control.R`), and Stata (`synthetic_control.do`).
+- **Quantile Binned Scatters:** Nonparametric binned scatter plots with OLS projections and conditional subgroup comparisons (Cattaneo, Crump, Farrell, and Feng, 2024, AER; Stepner, 2013). Available in Python (`binscatter.py`), R (`binscatter.R`), and Stata (`binscatter.do`).
+- **Coefficient Plots:** Multi-model horizontal forest plots comparing nested specifications (Bivariate, Fixed Effects, Controls, 2SLS/IV) with dual 90% and 95% confidence intervals (Jann, 2014). Available in Python (`coefficient_plots.py`), R (`coefficient_plots.R`), and Stata (`coefficient_plots.do`).
+- **Impulse Response Functions:** Macroeconomic dynamic responses using Jordà (2005) local projections with Newey-West HAC standard error bands (68% and 95%). Available in Python (`irf_plots.py`), R (`irf_plots.R`), and Stata (`irf_plots.do`).
+- **Spatial Econometrics & Cartography:**
+  - Equal-area 51-jurisdiction US state tile-grid cartograms (`state_tile_grid.py`, `state_tile_grid.R`, `state_tile_grid.do`).
+  - Spatial autoregressive lattice choropleths with Anselin (1988) Moran clustering (`regional_choropleth.py`, `choropleth_map.R`, `regional_choropleth.do`, `stata_spatial_map.do`).
+  - 3x3 bivariate choropleths with rotated diamond legends (`bivariate_choropleth.py`, `bivariate_choropleth.R`, `stata_bimap.do`).
+  - Robinson-projected world economy classifications under the IMF World Economic Outlook taxonomy (`global_economies_map.py`, `global_economies_map.R`, `stata_global_map.do`).
+- **Tufte Minimalist Exhibits:** Edward Tufte (1983) high data-ink graphics including midgap boxplots (`tufte_boxplot.py`, `tufte_boxplot.R`, `tufte_boxplot.do`) and slopegraphs (`slopegraph.py`, `slopegraph.R`, `slopegraph.do`).
+- **Micro-Graphics & Structural Diagrams:**
+  - Sparklines for tables (`sparklines.py`, `sparklines.R`, `sparklines.do`, `sparkline_table.tex`).
+  - Standalone TikZ Causal DAGs for confounding, colliders, and instrumental variables (`diagrams_and_dags/causal_dags/`).
+  - Policy rollout timelines (`diagrams_and_dags/timelines/`).
+
+## Exhibit & Formatting Standards
+
+- Dual vector PDF and 300 DPI raster PNG export across every generator script.
+- Zero in-figure chart titles (titles belong in manuscript captions and table notes).
+- Self-contained figure notes specifying sample size, estimator, clustering, and confidence intervals.
+- Colorblind-safe palettes (Okabe-Ito, Tol, Viridis) tested for grayscale readability.
+- Reproducible synthetic data generating processes (DGPs) seeded for exact determinism without paid dependencies.
+
+## Key Files for AI Code Generation
+
+- Python Matplotlib Stylesheet: `templates/academic.mplstyle`
+- R ggplot2 Publication Theme: `templates/publication_theme.R`
+- Stata Graph Styling Scheme: `templates/stata_publication_scheme.do`
+- Full Audit and Verification Report: `AUDIT.md`
+- Code Contribution Standards: `CONTRIBUTING.md`
