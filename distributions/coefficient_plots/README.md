@@ -30,10 +30,11 @@ Every coefficient plot in this module incorporates:
 | :--- | :--- | :--- |
 | `coefficient_plots.py` | Python (`matplotlib`, `pandas`) | Dual-band horizontal forest plot with direct annotation labels. |
 | `coefficient_plots.R` | R (`ggplot2`) | ggplot2 implementation using the academic theme and coordinate limits. |
+| `coefficient_plots.do` | Stata (`coefplot`) | Multi-model horizontal forest plot with 90% and 95% confidence intervals. |
 
 ---
 
 ## 4. Key References
 
 - **Gastel, B., & Day, R. A. (2016).** *How to Write and Publish a Scientific Paper* (8th ed.). Cambridge University Press.
-- **Jann, B. (2014).** Plotting regression coefficients and other estimates. *Stata Journal*, 14(4), 708-737.
+- **Jann, B. (2014).** Plotting regression coefficients and other estimates. *Stata Journal*, 14(4), 708-737. DOI: 10.1177/1536867X1401400402

@@ -20,6 +20,7 @@ A slopegraph integrates quantitative tables directly with graphic trajectories:
 | :--- | :--- | :--- |
 | `slopegraph.py` | Python (`matplotlib`) | Pure Python slopegraph with collision-free text alignment and high data-ink ratio. |
 | `slopegraph.R` | R (`ggplot2`) | ggplot2 implementation using direct text coordinates and `theme_tufte_academic`. |
+| `slopegraph.do` | Stata | Paired pre- and post-reform trajectory slopegraph with direct endpoint labels. |
 
 ---
 

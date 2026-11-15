@@ -34,14 +34,14 @@ Every event-study figure in this module incorporates:
 | File | Language | Description |
 | :--- | :--- | :--- |
 | `event_study.py` | Python (`statsmodels`, `matplotlib`) | Self-contained synthetic DGP, cluster-robust estimation, and export. |
+| `monte_carlo.py` | Python (`numpy`, `pandas`, `statsmodels`) | 200-draw Monte Carlo simulation comparing TWFE and Sun-Abraham (2021). |
 | `event_study.R` | R (`ggplot2`, `fixest`) | Clean ggplot2 implementation using the academic theme. |
-| `event_study.do` | Stata (`reghdfe`, `coefplot`) | Stata script with synthetic panel simulation and exhibit options. |
+| `event_study.do` | Stata (`reghdfe`, `coefplot`, `eventstudyinteract`) | Stata script with synthetic panel simulation and exhibit options. |
 
 ---
 
 ## 4. Key References
 
-- **Callaway, B., & Sant'Anna, P. H. (2021).** Difference-in-differences with multiple time periods. *Journal of Econometrics*, 225(2), 200-230.
-- **Goodman-Bacon, A. (2021).** Difference-in-differences with variation in treatment timing. *Journal of Econometrics*, 225(2), 254-277.
-- **Rambachan, A., & Roth, J. (2023).** A more credible approach to parallel trends. *Review of Economic Studies*, 90(5), 2555-2591.
-- **Sun, L., & Abraham, S. (2021).** Estimating dynamic treatment effects in event study designs with heterogeneous treatment effects. *Journal of Econometrics*, 225(2), 175-199.
+- **Callaway, B., & Sant'Anna, P. H. (2021).** Difference-in-differences with multiple time periods. *Journal of Econometrics*, 225(2), 200-230. DOI: 10.1016/j.jeconom.2020.12.001
+- **Goodman-Bacon, A. (2021).** Difference-in-differences with variation in treatment timing. *Journal of Econometrics*, 225(2), 254-277. DOI: 10.1016/j.jeconom.2021.03.014
+- **Sun, L., & Abraham, S. (2021).** Estimating dynamic treatment effects in event study designs with heterogeneous treatment effects. *Journal of Econometrics*, 225(2), 175-199. DOI: 10.1016/j.jeconom.2020.09.006

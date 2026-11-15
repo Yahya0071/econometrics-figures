@@ -19,6 +19,8 @@ Traditional quantitative papers isolate figures onto separate pages, requiring r
 | File | Type | Description |
 | :--- | :--- | :--- |
 | `sparklines.py` | Python (`matplotlib`) | Generator producing standalone vector PDF and PNG sparkline assets. |
+| `sparklines.R` | R (`ggplot2`) | Word-sized sparkline graphics for table integration. |
+| `sparklines.do` | Stata | Macroeconomic sparkline generation with min/max indicators. |
 | `sparkline_table.tex` | LaTeX | Demonstrates embedding sparklines into an empirical publication table. |
 
 ---

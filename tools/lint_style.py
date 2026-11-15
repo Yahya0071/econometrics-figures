@@ -22,8 +22,8 @@ def main():
         p = repo_root / f
         if p.is_file() and p.suffix in {".py", ".R", ".do", ".tex", ".md"}:
             text = p.read_text(encoding="utf-8", errors="ignore")
-            if "\u2014" in text or "—" in text:
-                violations.append(f"Em dash found in {f}")
+            if "\u2014" in text or "—" in text or "\u2013" in text or "–" in text:
+                violations.append(f"Em or en dash found in {f}")
         if p.is_file() and p.suffix in {".py", ".R", ".do", ".tex"}:
             for word in blacklist:
                 if word in text.lower():

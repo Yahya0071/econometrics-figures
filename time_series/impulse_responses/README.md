@@ -34,10 +34,11 @@ Every IRF exhibit in this module incorporates:
 | :--- | :--- | :--- |
 | `irf_plots.py` | Python (`statsmodels`, `matplotlib`) | Macro series simulation, HAC local projections, and dual-band plot. |
 | `irf_plots.R` | R (`ggplot2`) | ggplot2 implementation using the academic theme and confidence ribbons. |
+| `irf_plots.do` | Stata (`newey`) | Jorda (2005) local projections IRF with Newey-West HAC bands. |
 
 ---
 
 ## 4. Key References
 
-- **Jorda, O. (2005).** Estimation and inference of impulse responses by local projections. *American Economic Review*, 95(1), 161-182.
+- **Jorda, O. (2005).** Estimation and inference of impulse responses by local projections. *American Economic Review*, 95(1), 161-182. DOI: 10.1257/0002828053828518
 - **Ramey, V. A. (2016).** Macroeconomic shocks and their propagation. *Handbook of Macroeconomics*, 2, 71-162.

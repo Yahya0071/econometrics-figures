@@ -36,10 +36,12 @@ Every binscatter exhibit incorporates:
 | :--- | :--- | :--- |
 | `binscatter.py` | Python (`statsmodels`, `matplotlib`) | Quantile bin calculation, OLS estimation, and publication export. |
 | `binscatter.R` | R (`ggplot2`) | ggplot2 implementation using the academic theme and quantile splitting. |
+| `binscatter.do` | Stata (`binsreg`, `binscatter`) | Two-group quantile binned scatter plot with OLS projections. |
 
 ---
 
 ## 4. Key References
 
-- **Cattaneo, M. D., Crump, R. K., Farrell, M. H., & Feng, Y. (2024).** On binscatter. *American Economic Review*, 114(5), 1488-1514.
+- **Cattaneo, M. D., Crump, R. K., Farrell, M. H., & Feng, Y. (2024).** On binscatter. *American Economic Review*, 114(5), 1488-1514. DOI: 10.1257/aer.20221576
 - **Chetty, R., Hendren, N., Kline, P., & Saez, E. (2014).** Where is the land of opportunity? The geography of intergenerational mobility in the United States. *Quarterly Journal of Economics*, 129(4), 1553-1623.
+- **Stepner, M. (2013).** BINSCATTER: Stata module to generate binned scatterplots. Statistical Software Components S457709, Boston College Department of Economics.

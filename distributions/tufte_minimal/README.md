@@ -24,6 +24,7 @@ This module implements Edward Tufte's re-engineered data graphics from *The Visu
 | :--- | :--- | :--- |
 | `tufte_boxplot.py` | Python (`matplotlib`) | Midgap boxplot and dot-dash marginal rug scatter plot. |
 | `tufte_boxplot.R` | R (`ggplot2`) | ggplot2 implementation using `geom_linerange` and `theme_tufte_academic`. |
+| `tufte_boxplot.do` | Stata | Tufte midgap boxplot with percentile spikes and median markers. |
 
 ---
 

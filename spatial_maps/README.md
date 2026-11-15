@@ -48,7 +48,10 @@ Spatial visualization in empirical economics requires navigating five structural
 | :--- | :--- | :--- |
 | `global_economies_map.py` | Python (`geopandas`, `matplotlib`) | Global map of Advanced, Emerging, and Developing economies (IMF WEO, Robinson projection). |
 | `state_tile_grid.py` | Python (`matplotlib`) | Equal-area US state tile-grid cartogram with discrete quintile shading. |
+| `state_tile_grid.R` | R (`ggplot2`) | Equal-area US state tile-grid cartogram using geom_tile and direct text labels. |
+| `state_tile_grid.do` | Stata | Equal-area US state tile-grid cartogram via coordinate scatter tiles. |
 | `regional_choropleth.py` | Python (`geopandas`, `shapely`) | Spatial autoregressive (SAR) lattice choropleth with discrete quintiles. |
+| `regional_choropleth.do` | Stata (`spmap`) | Spatial autoregressive lattice choropleth with Moran spatial clustering. |
 | `bivariate_choropleth.py` | Python (`geopandas`, `matplotlib`) | Contiguous US bivariate map with 45-degree rotated diamond legend (Albers projection). |
 | `global_economies_map.R` | R (`sf`, `ggplot2`) | Global economic taxonomy map using Robinson projection and `theme_tufte_academic`. |
 | `choropleth_map.R` | R (`sf`, `ggplot2`) | Simple features spatial polygon map using `theme_tufte_academic`. |

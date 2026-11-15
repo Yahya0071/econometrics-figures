@@ -34,10 +34,11 @@ Every synthetic control exhibit incorporates:
 | :--- | :--- | :--- |
 | `synthetic_control.py` | Python (`scipy.optimize`, `matplotlib`) | Quadratic programming weights optimization, placebo simulation, and two-panel layout. |
 | `synthetic_control.R` | R (`ggplot2`, `patchwork`) | Reproducible script for SCM trajectory and gap exhibits. |
+| `synthetic_control.do` | Stata (`synth`) | Constrained synthetic control trajectory and placebo gap exhibit. |
 
 ---
 
 ## 4. Key References
 
 - **Abadie, A. (2021).** Using synthetic controls: Feasibility, data requirements, and methodological aspects. *Journal of Economic Literature*, 59(2), 391-425.
-- **Abadie, A., Diamond, A., & Hainmueller, J. (2010).** Synthetic control methods for comparative case studies: Estimating the effect of California's tobacco control program. *Journal of the American Statistical Association*, 105(490), 493-505.
+- **Abadie, A., Diamond, A., & Hainmueller, J. (2010).** Synthetic control methods for comparative case studies: Estimating the effect of California's tobacco control program. *Journal of the American Statistical Association*, 105(490), 493-505. DOI: 10.1198/jasa.2009.ap08746

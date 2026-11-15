@@ -34,12 +34,13 @@ Every RD plot in this module incorporates:
 | :--- | :--- | :--- |
 | `rd_plots.py` | Python (`statsmodels`, `matplotlib`) | Self-contained synthetic DGP, binned calculations, local linear fit, and export. |
 | `rd_plots.R` | R (`ggplot2`) | ggplot2 implementation using the academic theme and local linear fits. |
+| `rd_plots.do` | Stata (`rdrobust`, `rdplot`) | Sharp RD estimation and binned local polynomial plot. |
 
 ---
 
 ## 4. Key References
 
-- **Calonico, S., Cattaneo, M. D., & Titiunik, R. (2014).** Robust nonparametric confidence intervals for regression-discontinuity designs. *Econometrica*, 82(6), 2295-2326.
-- **Calonico, S., Cattaneo, M. D., & Titiunik, R. (2015).** Optimal data-driven regression discontinuity plots. *Journal of the American Statistical Association*, 110(512), 1753-1769.
+- **Calonico, S., Cattaneo, M. D., & Titiunik, R. (2014).** Robust nonparametric confidence intervals for regression-discontinuity designs. *Econometrica*, 82(6), 2295-2326. DOI: 10.3982/ECTA11757
+- **Calonico, S., Cattaneo, M. D., & Titiunik, R. (2015).** Optimal data-driven regression discontinuity plots. *Journal of the American Statistical Association*, 110(512), 1753-1769. DOI: 10.1080/01621459.2015.1017578
 - **Lee, D. S., & Lemieux, T. (2010).** Regression discontinuity designs in economics. *Journal of Economic Literature*, 48(2), 281-355.
 - **McCrary, J. (2008).** Manipulation of the running variable in the regression discontinuity design: A density test. *Journal of Econometrics*, 142(2), 698-714.
