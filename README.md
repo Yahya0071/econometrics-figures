@@ -12,6 +12,22 @@ Adheres strictly to the exhibit standards of Gastel and Day (2016), the identifi
 
 ---
 
+## Visual Exhibit Gallery
+
+| Causal Inference & Quasi-Experiments | Distributions & Specifications |
+| :---: | :---: |
+| [![Event Study](causal_inference/event_studies/event_study_preview.png)](causal_inference/event_studies/)<br>**Event Study (TWFE vs. Sun-Abraham)** | [![Coefficient Plot](distributions/coefficient_plots/coefficient_plot_preview.png)](distributions/coefficient_plots/)<br>**Multi-Model Coefficient Forest Plot** |
+| [![Sharp RD](causal_inference/regression_discontinuity/rd_plot_preview.png)](causal_inference/regression_discontinuity/)<br>**Sharp Regression Discontinuity** | [![Binscatter](distributions/binscatters/binscatter_preview.png)](distributions/binscatters/)<br>**Quantile Binned Scatter Plot** |
+| [![Synthetic Control](causal_inference/synthetic_control/synthetic_control_preview.png)](causal_inference/synthetic_control/)<br>**Synthetic Control & Placebo Gap** | [![Slopegraph](distributions/slopegraphs/slopegraph_preview.png)](distributions/slopegraphs/)<br>**Tufte Endpoint Slopegraph** |
+
+| Spatial Econometrics & Cartography | Macro Dynamics & Micro-Graphics |
+| :---: | :---: |
+| [![Global Economies](spatial_maps/global_economies_preview.png)](spatial_maps/)<br>**IMF Global Economy Taxonomy (Robinson)** | [![Local Projections IRF](time_series/impulse_responses/irf_preview.png)](time_series/impulse_responses/)<br>**Jorda (2005) Local Projections IRF** |
+| [![Bivariate Choropleth](spatial_maps/bivariate_choropleth_preview.png)](spatial_maps/)<br>**3x3 Bivariate Choropleth (Diamond Legend)** | [![Tufte Midgap](distributions/tufte_minimal/tufte_boxplot_preview.png)](distributions/tufte_minimal/)<br>**Tufte Minimalist Midgap Boxplot** |
+| [![State Tile Grid](spatial_maps/state_tile_grid_preview.png)](spatial_maps/)<br>**Equal-Area US State Tile Cartogram** | [![Sparklines](diagrams_and_dags/sparklines/spark_inflation.png)](diagrams_and_dags/sparklines/)<br>**Word-Sized Table Sparklines** |
+
+---
+
 ## Repository Architecture
 
 ```text
