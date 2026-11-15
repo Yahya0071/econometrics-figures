@@ -1,5 +1,11 @@
 # Publication-Grade Figures for Empirical Research
 
+[![CI Validation](https://github.com/Yahya0071/econometrics-figures/actions/workflows/ci.yml/badge.svg)](https://github.com/Yahya0071/econometrics-figures/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python: 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](requirements.txt)
+[![R: 4.0+](https://img.shields.io/badge/R-4.0+-276DC3.svg)](https://www.r-project.org/)
+[![Stata: 15+](https://img.shields.io/badge/Stata-15+-1a5b8c.svg)](https://www.stata.com/)
+
 A standardized repository providing publication-ready figure templates and computational scripts in Python, R, Stata, and LaTeX/TikZ. Designed specifically for empirical researchers, graduate students, and applied economists preparing manuscripts for leading academic journals (*AER*, *QJE*, *JFE*, *Review of Economic Studies*) and doctoral theses.
 
 Adheres strictly to the exhibit standards of Gastel and Day (2016), the identification requirements of modern econometrics, and the data-ink maximization principles of Edward Tufte (*The Visual Display of Quantitative Information*, 1983).
