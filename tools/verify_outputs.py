@@ -9,7 +9,11 @@ from pathlib import Path
 
 def main():
     repo_root = Path(__file__).resolve().parent.parent
-    expected_file = repo_root / "tools" / "expected_outputs.txt"
+    if len(sys.argv) > 1:
+        arg_path = Path(sys.argv[1])
+        expected_file = arg_path if arg_path.is_absolute() else repo_root / arg_path
+    else:
+        expected_file = repo_root / "tools" / "expected_outputs.txt"
     
     if not expected_file.exists():
         print(f"Error: Expected outputs list not found: {expected_file}", file=sys.stderr)

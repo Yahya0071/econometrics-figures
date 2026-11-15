@@ -120,6 +120,9 @@ jobs:
           Rscript time_series/impulse_responses/irf_plots.R
           Rscript diagrams_and_dags/sparklines/sparklines.R
 
+      - name: Verify Generated R Outputs
+        run: python3 tools/verify_outputs.py tools/expected_r_outputs.txt
+
   validate-latex-figures:
     name: LaTeX and TikZ Compilation
     runs-on: ubuntu-latest

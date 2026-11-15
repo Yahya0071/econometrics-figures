@@ -168,10 +168,12 @@ The repository includes a comprehensive GitHub Actions workflow (`.github/workfl
 - Cattaneo, M. D., R. K. Crump, M. H. Farrell, and Y. Feng (2024). On Binscatter. *American Economic Review*, 114(5), 1488-1514. DOI: 10.1257/aer.20221576
 - Goodman-Bacon, A. (2021). Difference-in-Differences with Variation in Treatment Timing. *Journal of Econometrics*, 225(2), 254-277. DOI: 10.1016/j.jeconom.2021.03.014
 - International Monetary Fund (IMF) (2024). *World Economic Outlook: Policy Pivot, Rising Threats*. Washington, DC: International Monetary Fund. DOI: 10.5089/9798400255892.081
+- Jann, B. (2014). Plotting regression coefficients and other estimates. *Stata Journal*, 14(4), 708-737. DOI: 10.1177/1536867X1401400402
 - Jorda, O. (2005). Estimation and Inference of Impulse Responses by Local Projections. *American Economic Review*, 95(1), 161-182. DOI: 10.1257/0002828053828518
 - Naqvi, A. (2022). BIMAP: Stata module to produce bivariate choropleth maps. Statistical Software Components S459091, Boston College Department of Economics.
 - Pisati, M. (2004). Simple Thematic Mapping. *Stata Journal*, 4(4), 361-378. DOI: 10.1177/1536867X0400400401
 - Robinson, A. H. (1974). A New Map Projection: Its Development and Characteristics. *International Yearbook of Cartography*, 14, 145-155.
+- Stepner, M. (2013). BINSCATTER: Stata module to generate binned scatterplots. Statistical Software Components S457709, Boston College Department of Economics.
 - Sun, L., and S. Abraham (2021). Estimating Dynamic Treatment Effects in Event Study Designs with Heterogeneous Treatment Effects. *Journal of Econometrics*, 225(2), 175-199. DOI: 10.1016/j.jeconom.2020.09.006
 - Tufte, E. R. (1983). *The Visual Display of Quantitative Information*. Cheshire, CT: Graphics Press.
 - Tufte, E. R. (2006). *Beautiful Evidence*. Cheshire, CT: Graphics Press.

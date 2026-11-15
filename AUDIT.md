@@ -124,6 +124,17 @@ The numbers below are generated directly by `monte_carlo.py` and saved to `monte
    - At $k \ge 5$ (lag bin), TWFE substantially overstates the true bin estimand (+0.586 bias; mean 4.396 versus true 3.810).
    - Sun-Abraham maintains minimal bias across all horizons (between -0.046 and +0.043), with empirical 95% confidence interval coverage between 92.0% and 95.5% (averaging 93.8%), aligning closely with nominal coverage.
 
+### Grayscale and Palette Contrast Verification
+
+To test legibility in monochrome print:
+1. Converted `causal_inference/event_studies/event_study_preview.png` to monochromatic 8-bit luma using standard ITU-R BT.601 transformation ($Y = 0.299 R + 0.587 G + 0.114 B$).
+2. Evaluated line element luma values:
+   - Near-black true-effect dotted line (`#222222`): $Y = 34.0$
+   - Okabe-Ito blue TWFE estimate marker and line (`#0072B2`): $Y = 87.2$
+   - Okabe-Ito vermilion reference vertical dash (`#D55E00`): $Y = 118.9$
+   - Background white space (`#FFFFFF`): $Y = 255.0$
+3. Line style differentiation (dotted `:` for true effect, dashed `--` for reference period, solid with circle markers `o-` for point estimates) ensures visual discrimination without relying solely on color hue.
+
 ---
 
 ## 3. Primary Citation Audit and Verification
@@ -147,26 +158,31 @@ Every citation in the repository was re-verified against Crossref metadata or pr
 | **Tufte (1983)** | Title, Author, Year, Publisher, LCCN, ISBN | `https://lccn.loc.gov/83081490` | **Confirmed** | *The Visual Display of Quantitative Information*, Graphics Press, LCCN: 83081490, ISBN: 978-0-9613921-4-7. |
 | **Tufte (2006)** | Title, Author, Year, Publisher, LCCN, ISBN | `https://lccn.loc.gov/2006925585` | **Confirmed** | *Beautiful Evidence*, Graphics Press, LCCN: 2006925585, ISBN: 978-0-9613921-7-8. |
 | **Naqvi (2022)** | Title, Author, Year, Archive, RePEc Handle | `https://ideas.repec.org/c/boc/bocode/s459091.html` | **Confirmed** | BIMAP: Stata module to produce bivariate choropleth maps, Boston College SSC S459091. |
+| **Stepner (2013)** | Title, Author, Year, Archive, RePEc Handle | `https://ideas.repec.org/c/boc/bocode/s457709.html` | **Confirmed** | BINSCATTER: Stata module to generate binned scatterplots, Boston College SSC S457709. |
+| **Jann (2014)** | Title, Author, Year, Journal, Vol, Issue, Pages, DOI | `https://doi.org/10.1177/1536867X1401400402` | **Confirmed** | *Stata Journal* 14(4), 708-737, DOI 10.1177/1536867X1401400402. |
 | **Rambachan and Roth (2023)** | Methodological Scope | N/A | **Removed** | Dropped from event study headers because the code implements dynamic estimation, not the Rambachan-Roth parallel trends sensitivity bounds. |
 
 ---
 
 ## 4. Cross-Language Parity Coverage Matrix
 
-| Exhibit Module | Python (`.py`) | R (`.R`) | Stata (`.do`) | LaTeX (`.tex`) | Parity Status |
+> [!NOTE]
+> Execution Status Transparency: Scripts marked **Executed** were executed directly in the local Windows environment with exit code 0 and verified non-empty outputs. Scripts marked **Written, not executed** have been authored, statically linted, and reviewed against package standards, but were not run locally due to environment constraints (absence of a proprietary Stata license, lack of local TeX Live `pdflatex`, or missing `sf` system libraries in local Windows R 4.6.0). Local execution verification is complete for all 13 Python generators and 10 R generators; remaining scripts rely on static linting and automated continuous integration.
+
+| Exhibit Module | Python (`.py`) | R (`.R`) | Stata (`.do`) | LaTeX (`.tex`) | Implementation & Execution Status |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| Event Studies (Staggered DiD) | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Regression Discontinuity | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Synthetic Control | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Binscatters | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Coefficient Plots | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Tufte Minimal Boxplot / Rug | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Slopegraphs | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| State Tile Grid Cartogram | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Regional Lattice Choropleth | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Bivariate Choropleth | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Global Economies (IMF WEO) | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Impulse Response Functions | Yes | Yes | Yes | N/A | Full Tri-Language Parity |
-| Sparklines | Yes | Yes | Yes | Yes | Complete Quad-Language Parity |
-| Causal DAGs | N/A | N/A | N/A | Yes | Standalone TikZ |
-| Rollout Timelines | N/A | N/A | N/A | Yes | Standalone TikZ |
+| Event Studies (Staggered DiD) | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| Regression Discontinuity | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| Synthetic Control | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| Binscatters | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| Coefficient Plots | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| Tufte Minimal Boxplot / Rug | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| Slopegraphs | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| State Tile Grid Cartogram | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| Regional Lattice Choropleth | Executed | Written, not executed (requires sf) | Written, not executed | N/A | Python verified; R + Stata written (not executed) |
+| Bivariate Choropleth | Executed | Written, not executed (requires sf) | Written, not executed | N/A | Python verified; R + Stata written (not executed) |
+| Global Economies (IMF WEO) | Executed | Written, not executed (requires sf) | Written, not executed | N/A | Python verified; R + Stata written (not executed) |
+| Impulse Response Functions | Executed | Executed | Written, not executed | N/A | Python + R verified; Stata written (not executed) |
+| Sparklines | Executed | Executed | Written, not executed | Written, not executed | Python + R verified; Stata + LaTeX written (not executed) |
+| Causal DAGs | N/A | N/A | N/A | Written, not executed | Standalone TikZ; written (not executed locally) |
+| Rollout Timelines | N/A | N/A | N/A | Written, not executed | Standalone TikZ; written (not executed locally) |

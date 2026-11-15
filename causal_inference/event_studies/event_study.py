@@ -262,7 +262,7 @@ def estimate_event_study(df, min_event=-5, max_event=5):
         })
         
     df_sa = pd.DataFrame(sa_res)
-    return df_twfe, df_sa, fit_twfe.nobs, len(np.unique(df["unit"]))
+    return df_twfe, df_sa, int(fit_twfe.nobs), int(len(np.unique(df["unit"])))
 
 
 def plot_event_study_comparison(df_twfe, df_sa, true_path, n_obs, n_clusters, out_pdf, out_png, style_path=None):
@@ -382,7 +382,7 @@ def plot_event_study_comparison(df_twfe, df_sa, true_path, n_obs, n_clusters, ou
         "Panel A reports standard TWFE with endpoint binning at k <= -5 and k >= 5. "
         "Panel B reports the Sun and Abraham interaction-weighted estimator, recovering the cohort-share-weighted effect across relative periods. "
         "Pointwise 95% confidence intervals reflect standard errors clustered at the unit level treating sample cohort shares as fixed. "
-        f"Total observations: N = {n_obs:,}; clusters: G = {n_clusters:,}."
+        f"Total observations: N = {int(n_obs):,}; clusters: G = {int(n_clusters):,}."
     )
     fig.text(0.04, -0.06, note_text, ha="left", va="top", fontsize=7.2, color="#333333", wrap=True)
     
